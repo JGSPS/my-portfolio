@@ -21,14 +21,29 @@
       <p id="date-container"></p>
       <p>Click <a href="/date">here</a> to see the server response directly.</p>
       
+      
       <img src="images/Cognitive_Science_Hexagon.svg" alt=Cognitive_Science width="400" height="400" align="left">
       <a href="timeline.html"> <img src="images/journey.png" alt=life_journey style="width:400px;height:400px" align="center"></a>
       <a href="images.html"> <img src="images/photo.png" alt=art_gallery style="width:400px;height:400px" align="right"></a>
       
       <form action="/form-handler" method="POST">
-        <p>Enter some text here:</p>
-        <textarea name="text-input">hello world</textarea>
+
+        <p>Enter a comma-separated list of words:</p>
+        <textarea name="text-input">one, two, three</textarea>
+        <br/><br/>
+  
+        <p>Choose some options:</p>
+        <label>
+          <input type="checkbox" name="upper-case" value="true">
+          Upper-case
+        </label>
         <br/>
+        <label>
+          <input type="checkbox" name="sort" value="true">
+          Alphabetize
+        </label>
+        <br/><br/>
+  
         <input type="submit" />
       </form>
       
