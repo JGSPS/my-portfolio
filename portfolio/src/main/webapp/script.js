@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Hello world!', 'The world is divided into those who screw and those who do not.', 'Wubba Lubba Dub Dub!', 'Bonjour le monde!'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -25,4 +25,41 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
+
+}
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showServerTime() {
+    const responseFromServer = await fetch('/date');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('date-container');
+    dateContainer.innerText = textFromResponse;
+}
+
+
+async function getServerStats() {
+    const responseFromServer = await fetch('/server-stats');
+    // The json() function returns an object that contains fields that we can
+    // reference to create HTML.
+    const stats = await responseFromServer.json();
+  
+    const statsListElement = document.getElementById('server-stats-container');
+    statsListElement.innerHTML = '';
+  
+    statsListElement.appendChild(
+        createListElement('Start time: ' + stats.startTime));
+    statsListElement.appendChild(
+        createListElement('Current time: ' + stats.currentTime));
+    statsListElement.appendChild(
+        createListElement('Max memory: ' + stats.maxMemory));
+    statsListElement.appendChild(
+        createListElement('Used memory: ' + stats.usedMemory));
+}
+  
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+    const liElement = document.createElement('li');
+    liElement.innerText = text;
+    return liElement;
 }

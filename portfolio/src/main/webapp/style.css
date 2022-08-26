@@ -1,9 +1,41 @@
 #content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+
 }
 
 #greeting-container {
-  margin-top: 20px;
+  margin-top: 40px;
 }
+
+p{
+    color: rgba(255, 0, 85, 0.603);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: rgba(255, 0, 85, 0.603);
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: "Lucida Handwriting", Cursive;
+}
+
+h2{
+    text-align: center;
+    color: rgb(35, 163, 110);
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: Monaco, Courier New, Monospace;
+}
+
+html { 
+    background: url(images/background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
